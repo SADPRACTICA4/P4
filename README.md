@@ -1,5 +1,5 @@
-# P4
-Practica 4
+# Practica 4
+Practica 4 de SAD, Documentar en este readme todas las ediciones.
 
 #Domingo 29/03/15
 - Creado el repositorio --Rafa

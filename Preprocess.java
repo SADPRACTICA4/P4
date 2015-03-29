@@ -31,7 +31,7 @@ public class Preprocess {
 	   		
 	}
 	/*Metodo creado por Rafa; Calcula el indice de la clase minoritaria para un conjunto de instancias*/
-	public double clase Minoritaria(Instances data){
+	public double claseMinoritaria(Instances data){
 		HashMap <Double,Integer> mapa= new HashMap<Double, Integer> ();
 		//Recorro las instancias almacenandolas en el mapa
 		for(int i=0;i<newdatatrain.numInstances();i++){

@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import weka.core.Instances;
 
 public class Preprocess {
-	 public static void main(String[] args) throws Exception  { 
+	/*Metodo creado por Jonatan*/
+	 public static void cargaDeDatos(String[] args) throws Exception  { 
 	        System.out.println ("&&&&&%%%%%&&&&&&    PRACTICA 4 - SAD     %%%&&&&&&&&&&&"); 
 	        	ArrayList<Instances> loadData = new ArrayList<Instances>();
 	    		try {
@@ -29,7 +30,7 @@ public class Preprocess {
 	    		System.out.println(instancesTest.instance(0).toString());
 	   		
 	}
-	/*Metodo creado por Rada; Calcula el indice de la clase minoritaria para un conjunto de instancias*/
+	/*Metodo creado por Rafa; Calcula el indice de la clase minoritaria para un conjunto de instancias*/
 	public double clase Minoritaria(Instances data){
 		HashMap <Double,Integer> mapa= new HashMap<Double, Integer> ();
 		//Recorro las instancias almacenandolas en el mapa

@@ -27,10 +27,46 @@ public class Preprocess {
 	    		System.out.println(instancesDev.instance(0).toString());
 	    		System.out.println("$$$$   Archivo -> test.arff  Primera Instacia$$$$$$$$");
 	    		System.out.println(instancesTest.instance(0).toString());
-	    	
-	    		
-	    		
-	    		
-}
+	   		
+	}
+	/*Metodo creado por Rada; Calcula el indice de la clase minoritaria para un conjunto de instancias*/
+	public double clase Minoritaria(Instances data){
+		HashMap <Double,Integer> mapa= new HashMap<Double, Integer> ();
+		//Recorro las instancias almacenandolas en el mapa
+		for(int i=0;i<newdatatrain.numInstances();i++){
+			double valor=newdatatrain.instance(i).classValue();
+			if(mapa.containsKey(valor)){
+				Iterator<Double> keySetIterator = mapa.keySet().iterator();
+				int cont=0;
+				while(keySetIterator.hasNext()){
+				  Double key = keySetIterator.next();
+				  cont=mapa.get(key);
+				}
+				
+				mapa.replace(valor, cont, cont+1);
+			}
+			else{
+				mapa.put(valor, 1);
+			}
+		}
+		//Creo una collecion de enteros con las apariciones de la clase
+		Collection<Integer> valors=mapa.values();
+		//obtengo el menor valos de las apariciones
+		int min=Collections.min(valors,null);
+		double clasemin = 0;
+		Iterator<Double> keySetIterator = mapa.keySet().iterator(); 
+		//Recorro el mapa en busca de la key del menor valor en apariciones
+		while(keySetIterator.hasNext()){
+		  Double key = keySetIterator.next();
+		  int cont=mapa.get(key);
+		  if(cont==min){
+			  clasemin=key;
+		  }
+		} 
+		//imprimo el mapa
+		System.out.println(mapa.toString());
+		//Devuelvo el indice de la clase minoritaria
+		return clasemin;
+	}
 }
 	
